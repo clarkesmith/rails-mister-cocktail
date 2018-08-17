@@ -1,0 +1,14 @@
+<div class="banner" style="background-image: url('https://source.unsplash.com/random')">
+  <div class="banner-content">
+    <h1><%= @cocktail.name %></h1>
+
+    <ul><% @cocktail.doses.each do |dose| %>
+      <li><%= dose.amount %> of <%= dose.ingredient.name %></li>
+        <ul><li><%= dose.description %></li></ul>
+    <% end %></ul>
+
+    <%= link_to 'Add ingredients', new_cocktail_dose_path(@cocktail),class: "btn btn-secondary" %> |
+    <%= link_to 'Edit', edit_cocktail_path(@cocktail),class: "btn btn-secondary" %> |
+    <%= link_to 'Back', cocktails_path,class: "btn btn-secondary" %>
+  </div>
+</div>
